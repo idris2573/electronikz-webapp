@@ -1,0 +1,86 @@
+body{
+    background-color: #2d3b46 !important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.font-weight-500{
+    font-weight:500;
+}
+
+.id-primary{
+    background-color: #5485ad !important;
+}
+
+.product{}
+
+.product:hover{
+    opacity: .8;
+}
+
+.electronikz-border{
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+}
+
+span.text-white:hover{
+    opacity: .6;
+}
+
+.border-right{
+    border-right: #357613 solid 1px !important;
+}
+
+.view-price{
+    position: fixed;
+    width: 100%;
+    z-index: 9997;
+    bottom: 0;
+}
+
+/**********************************RESPONSIVE*************************************************/
+
+
+@media (min-width: 390px) {
+
+
+}
+
+
+@media (min-width: 576px) {
+    #login{
+        width: 500px;
+    }
+    div.tooltip-inner {
+        max-width: 250px;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    .w-lg-50{
+        width:50% !important;
+    }
+
+    .w-lg-75{
+        width:75% !important;
+    }
+
+    .d-lg-contents{
+        display: contents;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1450px) {
+
+}
+

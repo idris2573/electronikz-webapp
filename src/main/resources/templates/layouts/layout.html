@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(page_title)">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title th:text="'Electronikz • ' + ${page_title}">Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">    <!--<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet"/>-->
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}"/>
+    <link rel="icon" th:href="@{/assets/images/favi.png}"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-88798780-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-88798780-1');
+    </script>
+
+    <!--GENIUS-->
+    <script type="text/javascript" src="//cdn.geni.us/snippet.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var tsid =23312;
+            Genius.amazon.convertLinks(tsid, false, "http://buy.geni.us"); });
+    </script>
+
+
+    <!--MOUSEFLOW-->
+    <script type="text/javascript">
+        var _mfq = _mfq || [];
+        (function() {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript"; mf.async = true;
+            mf.src = "//cdn.mouseflow.com/projects/94704c54-c28b-4da5-b843-61e7a48d63dd.js";
+            document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
+    </script>
+</head>
+<body>
+
+<!--#############################################NAVIGATION-LOGGED-IN#############################################-->
+
+<nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark id-primary">
+    <div class="container py-2">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/assets/images/logo.png}" alt="electronikz-logo" width="200" class="d-inline-block align-top img-fluid"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item" th:classappend="${activeNav == 'home'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/}">What's New</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeNav == 'Laptops'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Laptops}">Laptops</a>
+                </li>
+                <li class="nav-item" th:classappend="${activeNav == 'TV & Monitors'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/TV-Monitors}">TV & Monitors</a>
+                </li>
+                <li class="nav-item d-none d-xl-block" th:classappend="${activeNav == 'Tablets'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Tablets}">Tablets</a>
+                </li>
+                <li class="nav-item d-none d-xl-block" th:classappend="${activeNav == 'Cameras'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Cameras}">Cameras</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="get" th:action="@{/search/p}">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Products" name="s" aria-label="Search" size="38">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!--#############################################FOOTER#############################################-->
+
+<footer th:fragment="footer" class="py-5 bg-light border-top shadow-sm">
+    <div th:replace="layouts/scripts :: bootstrap"></div>
+    <p class="text-center text-secondary mb-0">© Copyright 2018 - Electronikz</p>
+    <div class="text-center">
+        <a th:href="@{/privacy-policy}" class="text-dark">Privacy Policy</a>
+        <span class="px-2">•</span>
+        <a th:href="@{/contact-us}" class="text-dark">Contact Us</a>
+    </div>
+    <div class="py-2">
+        <br/>
+    </div>
+</footer>
+
+</body>
+</html>

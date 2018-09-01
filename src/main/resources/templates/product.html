@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/layout :: head(${product.title})"></head>
+
+<body>
+
+<div th:replace="layouts/layout :: navigation"></div>
+
+<div class="container mt-sm-3 p-2 pb-5" th:object="${product}">
+
+    <h1 class="h4 text-white my-1 text-center text-lg-left" th:text="*{title}"></h1>
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <p class="text-white text-center text-lg-left" th:text="*{brand}"></p>
+            <div class="electronikz-border mb-3">
+                <p class="text-white mb-0 py-1">
+                    Electronikz.com Selection are all the exclusive content picked by our team. Please help support us by liking or sharing our website.
+                </p>
+            </div>
+
+            <div class="bg-white rounded mb-2">
+                <a th:href="@{*{amazonLink}}">
+                    <span class="bg-primary py-2 px-2 d-inline-block text-white">Click for more images</span>
+                    <img th:src="@{*{image1}}" th:alt="*{title}" class="img-fluid" style="width: 1000px"/>
+                </a>
+                <p class="px-3 py-3">
+                    To view the item, click on the <b>"View Price"</b> button at the top right of the page. Or you can just click on the image
+                </p>
+            </div>
+
+            <div class="bg-white rounded mb-3 p-3">
+                <p class="font-weight-500" th:text="*{title}"></p>
+                <p class="font-weight-500">Product Description</p>
+                <ul th:utext="*{description1.replace('^^', '</li><li>')}"></ul>
+                <p class="font-weight-500" th:if="*{description2 != null}">Extra Description</p>
+                <p th:text="*{description2}"></p>
+            </div>
+
+            <div class="row">
+                <div class="col-6 col-lg-3 mb-3">
+                    <img th:src="*{image2}" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 mb-3">
+                    <img th:src="*{image3}" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 mb-3">
+                    <img th:src="*{image4}" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-lg-3 mb-3">
+                    <img th:src="*{image5}" class="img-fluid rounded">
+                </div>
+            </div>
+
+            <div class="bg-white rounded mb-3 p-3">
+                <p class="font-weight-500" th:if="*{review1 != null}">Review</p>
+                <p th:text="*{review1}" th:if="*{review1 != null}"></p>
+                <div class="text-white text-right">
+                    <a th:href="*{amazonLink}">
+                        <span class="bg-primary py-2 px-2 d-inline-block font-weight-500 text-white" style="margin-right: -16px">Read Reviews</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="mb-3 text-white">
+                <a th:if="*{category1} != null" th:href="@{'/cat/' + *{category1.name.replace(' ', '+')}}">
+                    <span th:text="*{category1.name}" class="text-white"></span>
+                </a>
+                <span th:if="*{category2} != null"> > </span>
+                <a th:if="*{category2} != null" th:href="@{'/cat/' + *{category2.name.replace(' ', '+')}}">
+                    <span th:text="*{category2.name}" class="text-white"></span>
+                </a>
+                <span th:if="*{category3} != null"> > </span>
+                <a th:if="*{category3} != null" th:href="@{'/cat/' + *{category3.name.replace(' ', '+')}}">
+                    <span th:text="*{category3.name}" class="text-white"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4 pt-lg-5">
+
+            <a th:href="*{amazonLink}" target="_blank">
+                <div class="bg-white rounded mb-3 p-1">
+                    <div class="bg-success rounded product">
+                        <div class="row py-2 mx-0">
+                            <div class="col-2 col-lg-3 my-auto border-right">
+                                <img th:src="@{/assets/images/eye-icon.png}" class="img-fluid">
+                            </div>
+                            <div class="col text-center">
+                                <h4 class="mb-0 text-white">View Price</h4>
+                                <p class="mb-0 text-white">Up to 40% Off</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="bg-white rounded mb-3 p-1">
+                <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Responsive Electrionikz side ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7553929430370835"
+                     data-ad-slot="5851496142"
+                     data-ad-format="auto"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div class="bg-white rounded mb-3 p-1">
+                <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Responsive Electrionikz side ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7553929430370835"
+                     data-ad-slot="5851496142"
+                     data-ad-format="auto"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <a th:href="*{amazonLink}" target="_blank">
+                <div class="bg-white rounded mb-3 p-1 d-none d-md-block">
+                    <div class="bg-success rounded product">
+                        <div class="row py-2 mx-0">
+                            <div class="col-2 col-lg-3 my-auto border-right">
+                                <img th:src="@{/assets/images/eye-icon.png}" class="img-fluid">
+                            </div>
+                            <div class="col text-center">
+                                <h4 class="mb-0 text-white">View Price</h4>
+                                <p class="mb-0 text-white">Up to 40% Off</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bg-white pb-4">
+    <div class="container pt-4">
+        <h4>You might also like</h4>
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-3 my-auto" th:each="product : ${relatedProducts}" th:object="${product}">
+                <a th:href="@{'/' + *{filename}}">
+                    <img th:src="*{image1}" th:alt="*{title}" class="img-fluid product">
+                    <p th:text="*{title}"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a th:href="${product.amazonLink}" target="_blank">
+    <div class="bg-white rounded p-1 view-price d-md-none">
+        <div class="bg-success rounded product">
+            <div class="row py-2 mx-0">
+                <div class="col-2 col-lg-3 my-auto border-right">
+                    <img th:src="@{/assets/images/eye-icon.png}" class="img-fluid">
+                </div>
+                <div class="col text-center">
+                    <h4 class="mb-0 text-white">View Price</h4>
+                    <p class="mb-0 text-white">Up to 40% Off</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+
+
+<footer th:replace="layouts/layout :: footer"></footer>
+
+</body>
+</html>

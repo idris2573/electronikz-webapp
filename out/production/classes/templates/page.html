@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/layout :: head(${title})"></head>
+
+<body>
+
+<div th:replace="layouts/layout :: navigation"></div>
+
+<div class="container mt-sm-3 bg-white p-2 pb-5 px-4">
+
+    <h1 th:text="${title}" class="h2 text-dark pt-4 text-center"></h1>
+    <p th:utext="${text}"></p>
+
+</div>
+
+
+
+
+<footer th:replace="layouts/layout :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/layout :: head('Largest Selection of Electronikz')"></head>
+
+<body>
+
+<div th:replace="layouts/layout :: navigation"></div>
+
+<div class="container mt-sm-3 bg-white p-2 pb-5">
+    <a href="https://www.amazon.com/Computers-Tablets/b/ref=nav_shopall_basedevices?ie=UTF8&node=13896617011">
+        <img th:src="@{/assets/images/banner.png}" alt="banner" class="img-fluid"/>
+    </a>
+
+    <div class="text-center py-2">
+        <h2 class="text-dark">We currently have hundreds of Electronics and Devices to offer.</h2>
+        <p class="text-dark">Discover our exclusive content! Find dozens of Amazing Electronics every day, <b>all selected by Electronikz.com</b></p>
+    </div>
+
+    <div class="row mx-2">
+        <div class="col-6 col-md-4 col-lg-3 my-auto" th:each="product : ${products}" th:object="${product}">
+            <a th:href="@{'/' + *{filename}}">
+                <img th:src="*{image1}" th:alt="*{title}" class="img-fluid product">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer th:replace="layouts/layout :: footer"></footer>
+
+</body>
+</html>
