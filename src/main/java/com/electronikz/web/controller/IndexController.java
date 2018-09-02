@@ -21,7 +21,7 @@ public class IndexController {
 
     @RequestMapping(value = "/")
     public String product(Model model, HttpServletRequest request) throws Exception{
-        String url = "http://159.89.145.24:8080";
+        String url = "http://159.89.145.24:9000";
         if(request.getRequestURL().toString().contains("localhost")){
             url = "http://localhost:9000";
         }

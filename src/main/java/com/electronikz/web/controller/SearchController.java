@@ -22,7 +22,7 @@ public class SearchController {
     @RequestMapping(value = "/p")
     public String product(Model model, HttpServletRequest request) throws Exception{
 
-        String url = "http://159.89.145.24:8080";
+        String url = "http://159.89.145.24:9000";
         if(request.getRequestURL().toString().contains("localhost")){
             url = "http://localhost:9000";
         }
@@ -39,7 +39,7 @@ public class SearchController {
         PageData pageData = mapper.readValue(new URL(url + "/product/search/" + terms + "?page=" + page), PageData.class);
         Set<Product> products = pageData.getContent();
 
-        PageData pageDataCat = mapper.readValue(new URL(url + "/category/first20"), PageData.class);
+        PageData pageDataCat = mapper.readValue(new URL(url + "/category/categories"), PageData.class);
         Set<Category> categories = pageDataCat.getContent();
 
         model.addAttribute("products", products);

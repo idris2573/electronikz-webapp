@@ -22,13 +22,17 @@ public class ProductController {
 
     @RequestMapping(value = "/{filename}")
     public String product(@PathVariable String filename, Model model, HttpServletRequest request) throws Exception{
-        String url = "http://159.89.145.24:8080";
+        String url = "http://159.89.145.24:9000";
         if(request.getRequestURL().toString().contains("localhost")){
             url = "http://localhost:9000";
         }
         ObjectMapper mapper = new ObjectMapper();
-        ProductRelated productRelated = mapper.readValue(new URL(url + "/product/product-related/" + filename), ProductRelated.class);
-
+        ProductRelated productRelated;
+        try {
+            productRelated  = mapper.readValue(new URL(url + "/product/product-related/" + filename), ProductRelated.class);
+        }catch (Exception e){
+            return "redirect:/search/p?s=" + filename.replace("-", "+");
+        }
         Product product = productRelated.getProduct();
         Set<Product> relatedProducts = productRelated.getRelated();
 
