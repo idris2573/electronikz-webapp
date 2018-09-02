@@ -40,6 +40,10 @@ span.text-white:hover{
     bottom: 0;
 }
 
+.product-image{
+    width: 250px;
+}
+
 /**********************************RESPONSIVE*************************************************/
 
 
