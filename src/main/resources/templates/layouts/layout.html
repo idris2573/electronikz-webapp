@@ -57,20 +57,24 @@
                 <li class="nav-item" th:classappend="${activeNav == 'home'} ? 'active' : ''">
                     <a class="nav-link" th:href="@{/}">What's New</a>
                 </li>
-                <li class="nav-item" th:classappend="${activeNav == 'Laptops'} ? 'active' : ''">
-                    <a class="nav-link" th:href="@{/cat/Laptops}">Laptops</a>
+                <li class="nav-item" th:classappend="${activeNav == 'PC'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/PC}">Computers</a>
                 </li>
-                <li class="nav-item" th:classappend="${activeNav == 'TV & Monitors'} ? 'active' : ''">
-                    <a class="nav-link" th:href="@{/cat/TV-Monitors}">TV & Monitors</a>
+                <li class="nav-item" th:classappend="${activeNav == 'Earbud+Headphones'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Earbud+Headphones}">Headphones</a>
                 </li>
-                <li class="nav-item d-none d-xl-block" th:classappend="${activeNav == 'Tablets'} ? 'active' : ''">
-                    <a class="nav-link" th:href="@{/cat/Tablets}">Tablets</a>
+                <li class="nav-item d-lg-none d-xl-block" th:classappend="${activeNav == 'Computers+&+Tablets'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Computers+&+Tablets}">Tablets</a>
                 </li>
-                <li class="nav-item d-none d-xl-block" th:classappend="${activeNav == 'Cameras'} ? 'active' : ''">
-                    <a class="nav-link" th:href="@{/cat/Cameras}">Cameras</a>
+                <li class="nav-item d-lg-none d-xl-block" th:classappend="${activeNav == 'Digital+Cameras'} ? 'active' : ''">
+                    <a class="nav-link" th:href="@{/cat/Digital+Cameras}">Cameras</a>
                 </li>
+                <form class="form-inline my-2 my-lg-0 mx-auto d-lg-none" method="get" th:action="@{/search/p}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Products" name="s" aria-label="Search" size="38">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="get" th:action="@{/search/p}">
+            <form class="form-inline my-2 my-lg-0 d-none d-lg-block" method="get" th:action="@{/search/p}">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Products" name="s" aria-label="Search" size="38">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>

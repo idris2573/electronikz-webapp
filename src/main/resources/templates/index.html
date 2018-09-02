@@ -19,7 +19,7 @@
     <div class="row mx-2">
         <div class="col-6 col-md-4 col-lg-3 my-auto" th:each="product : ${products}" th:object="${product}">
             <a th:href="@{'/' + *{filename}}">
-                <img th:src="*{image1}" th:alt="*{title}" class="img-fluid product">
+                <img th:src="*{image1}" th:alt="*{title}" class="img-fluid product product-image">
             </a>
         </div>
     </div>
