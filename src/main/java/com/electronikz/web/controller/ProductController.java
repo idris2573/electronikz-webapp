@@ -31,7 +31,8 @@ public class ProductController {
         try {
             productRelated  = mapper.readValue(new URL(url + "/product/product-related/" + filename), ProductRelated.class);
         }catch (Exception e){
-            return "redirect:/search/p?s=" + filename.replace("-", "+");
+            return "redirect:/error";
+//            return "redirect:/search/p?s=" + filename.replace("-", "+");
         }
         Product product = productRelated.getProduct();
         Set<Product> relatedProducts = productRelated.getRelated();
